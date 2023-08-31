@@ -16,7 +16,7 @@ namespace MVCLoginSession.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(User objUser)
+        public ActionResult Login(User objUser) //Username,Password - John
         {
                 using (MVCAuthenticationEntities db = new MVCAuthenticationEntities())
                 {
@@ -29,8 +29,8 @@ namespace MVCLoginSession.Controllers
 
                         if (IsValidUser)
                         {
-                            Session["UserID"] = objUser.Id.ToString();
-                            Session["UserName"] = objUser.Username.ToString();
+                            Session["UserID"] = objUser.Id.ToString(); // 1
+                            Session["UserName"] = objUser.Username.ToString(); // John
                         //    Session["Password"] = objUser.Password.ToString();
                         //if (Session["UserName"] != null && Session["Password"] != null)
                         //{
